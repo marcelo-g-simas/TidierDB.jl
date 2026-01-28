@@ -8,6 +8,7 @@ mutable struct DatabricksConnection
     api_url::String
 end
 
+DATABRICKS_SQL_API_PATH = "/api/2.0/sql/statements"
 
 function databricks_api_request(conn::DatabricksConnection, method::String="POST"; 
     body=nothing, statement_id::Union{Nothing, String}=nothing, next_chunk_link::Union{Nothing, String}=nothing)
